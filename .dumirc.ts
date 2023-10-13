@@ -1,6 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
+  outputPath: 'dist',
   themeConfig: {
     name: 'blog',
     nav:[{ title: '学习笔记', link: '/guide' }],
