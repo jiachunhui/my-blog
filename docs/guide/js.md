@@ -5,7 +5,7 @@ order: 100
 ---
 
 ### 静态资源设置跨域
-:::warning 注意
+:::warning{title=注意}
 前端使用 canvas 加载图片时，由于图片跨域问题，报如下错误。\
 canvas 生成图片 toDataURL 报错(Uncaught DOMException: Failed to execute ‘toDataURL‘ on ‘HTMLCanvasEl)
 :::
