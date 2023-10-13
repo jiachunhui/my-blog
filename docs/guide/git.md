@@ -52,4 +52,53 @@ git tag v1.0.1 # 给当前commit打tag
 git tag v1.0.1 <commit> # 给某个commit打tag
 git tag --delete v1.0.1 # 删除tag v1.0.1
 
+
+# 注意修改成自己的IP和端口号
+git config --global http.proxy http://127.0.0.1:7890 
+git config --global https.proxy http://127.0.0.1:7890
+
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# 查看代理
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+## 报错：`Failed to connect to github.com port 443 after 21080 ms: Couldn't connect to server`
+> Failed to connect to github.com port 443 after 21080 ms: Couldn't connect to server
+
+经网上查找资料显示
+
+**问题分析**
+
+Git 所设端口与系统代理不一致，需重新设置
+
+
+**解决方案**
+
+打开 设置 --> 网络与Internet --> 查找代理
+> 因为我用M*F,不然网站都打打开，所以代理那里有设置看一下端口号\ 我的是地址与端口号为：127.0.0.1:7890
+
+修改 Git 的网络设置
+```bash
+# 注意修改成自己的IP和端口号
+git config --global http.proxy http://127.0.0.1:7890 
+git config --global https.proxy http://127.0.0.1:7890
+```
+重新试一下，就发现OK了
+
+当我们访问GitHub的时候一般都会使用梯子，所以往上推代码的时候也是需要梯子，没有梯子推送成功概率很低，一般都会报错超时，所以设置梯子提高访问成功率；
+
+取消代理是因为，访问 Gitee 或其它是不需要梯子，所以要取消代理；或者后悔设置代理了，也可以利用此取消
+
+```bash
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# 查看代理
+git config --global --get http.proxy
+git config --global --get https.proxy
 ```
