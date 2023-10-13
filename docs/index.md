@@ -1,8 +1,8 @@
 ---
-title: A static site based on dumi
+title: 小辉
 hero:
-  title: Site
-  description: A static site based on dumi
+  title: 网站建设
+  description: 小辉的学习笔记
   actions:
     - text: 公司官网
       link: https://www.ccxcn.com
