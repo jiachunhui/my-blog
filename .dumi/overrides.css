@@ -1,0 +1,36 @@
+.markdown h2 {
+  position: relative;
+  line-height: 1;
+}
+.markdown h2::before {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  bottom: 4px;
+  width: 10px;
+  background-color: #1890ff;
+  content: '';
+}
+.markdown h4 {
+  color: #333;
+}
+.markdown pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+}
+.markdown blockquote {
+  font-size: 14px;
+}
+.markdown blockquote p {
+  margin: 0;
+}
+.markdown blockquote p + p {
+  margin-top: 2em;
+}
+.dumi-default-source-code + .dumi-default-source-code {
+  margin-top: -1px;
+}
+.dumi-default-source-code + .dumi-default-source-code pre {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
