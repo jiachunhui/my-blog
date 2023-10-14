@@ -20,7 +20,9 @@
     ]
   },
   "dependencies": {
-    "antd": "^5.10.0"
+    "antd": "^5.10.0",
+    "jspdf": "^2.5.1",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
