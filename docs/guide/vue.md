@@ -4,6 +4,67 @@ title: Vue 学习笔记
 order: 20
 ---
 
+## vue3网页中写法
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue 3 Example</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ message }}</h1>
+  </div>
+
+  <script>
+      const { ref, computed, watch, onMounted, onUpdated, onUnmounted } = Vue;
+    // 创建一个 Vue 实例
+    const app = Vue.createApp({
+      setup() {
+                const message = ref('Hello, Vue 3!');
+                const reversedMessage = computed(() => message.value.split('').reverse().join(''));
+
+                watch(message, (newValue, oldValue) => {
+                    console.log(`Message changed from ${oldValue} to ${newValue}`);
+                });
+
+                onMounted(() => {
+                    console.log('Component is mounted');
+                });
+
+                onUpdated(() => {
+                    console.log('Component is updated');
+                });
+
+                onUnmounted(() => {
+                    console.log('Component is unmounted');
+                });
+
+                return {
+                    message,
+                    reversedMessage
+                }
+            },
+      data() {
+        return {
+          message: 'Hello, Vue 3!'
+        };
+      }
+      methods:{
+        sayHello(){
+          console.log('hello')
+      }
+    });
+
+    // 将 Vue 实例挂载到页面上的元素
+    app.mount('#app');
+  </script>
+</body>
+</html>
+
+```
+
 ## Vue2网页基础代码
 ```js
 var data = {};
