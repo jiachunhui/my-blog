@@ -106,7 +106,7 @@ git config --global --get http.proxy
 git config --global --get https.proxy
 ```
 
-## 报错`husky - commit-msg hook exited with code 1 (error)`
+## 报错：`husky - commit-msg hook exited with code 1 (error)`
 
 ```bash
 ⧗   input: 增加了在线工具
