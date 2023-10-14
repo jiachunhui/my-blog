@@ -20,27 +20,39 @@ const App: React.FC = () => {
 const props = {
   name: 'file',
   multiple: false,
+  beforeUpload(file){
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64 = reader.result;
+        setBase64Image(base64);
+        reject(); // 中止上传
+      };
+      reader.readAsDataURL(file);
+    });
+  },
   onChange(info) {
     const { status } = info.file;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
+    //这里不需要上传
+    // if (status !== 'uploading') {
+    //   console.log(info.file, info.fileList);
+    // }
+    // if (status === 'done') {
 
-      const file = info.file.originFileObj;
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setBase64Image(reader.result);
-      };
+    //   const file = info.file.originFileObj;
+    //   const reader = new FileReader();
+    //   reader.onloadend = () => {
+    //     setBase64Image(reader.result);
+    //   };
 
-      if (file) {
-        reader.readAsDataURL(file);
-      }
+    //   if (file) {
+    //     reader.readAsDataURL(file);
+    //   }
 
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
+    //   message.success(`${info.file.name} file uploaded successfully.`);
+    // } else if (status === 'error') {
+    //   message.error(`${info.file.name} file upload failed.`);
+    // }
   },
   onDrop(e) {
     console.log('Dropped files', e.dataTransfer.files);
