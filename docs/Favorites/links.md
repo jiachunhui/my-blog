@@ -15,3 +15,5 @@ order: 0
 ## Admin.Net [访问](https://gitee.com/zuohuaijun/Admin.NET)
 
 有可能是.NET 最好用的通用权限开发框架
+
+## JetBrains Rider for UnrealEngine 2022(2023 适用)破解方法 [访问](https://zhuanlan.zhihu.com/p/561569226)
