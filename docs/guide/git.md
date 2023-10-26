@@ -2,6 +2,7 @@
 group: 学习笔记
 title: Git 学习笔记
 order: 100
+toc: content
 ---
 
 **常用命令**
